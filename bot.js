@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
-const devs = ['389090790984515594'];
+const devs = ['462028844543508490'];
 const db = require('quick.db');
-const premium = ['470896018603376640']
+const premium = ['462028844543508490']
 const client = new Discord.Client();   
 const bot = new Discord.Client();   
 const giphy = require('giphy-api')();    
@@ -46,7 +46,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/barontube`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/Ninja`);
     }, ms);
     console.log(` ????????? |> Name: ${client.user.username}`);
  console.log(` ????????? |> Servers: ${client.guilds.size}`);
@@ -226,7 +226,7 @@ message.channel.send(`**${message.author.username}, your :credit_card: balance i
 });
 
 client.on('message', async message => {
-    let amount = 250;
+    let amount = 9999999999;
     if(message.content.startsWith(prefix + "daily")) {
     if(message.author.bot) return;
     if(coolDown.has(message.author.id)) return message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes in \`\`1 Day\`\`.**`);
