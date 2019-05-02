@@ -3554,7 +3554,7 @@ A.react ('🇲🇦'). ثم (() => A.react ('🇲🇦'))
 }   
  });  /// by N1Cho
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', '《الترحــــــــــــــــيب》');
+    let channel = member.guild.channels.find('name', '⇁『welcome』');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
     let embed = new Discord.RichEmbed()
