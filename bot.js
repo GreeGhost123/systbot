@@ -4,7 +4,7 @@ const db = require('quick.db');
 const premium = ['200644160179535872']
 const client = new Discord.Client();   
 const bot = new Discord.Client();   
-const giphy = require('giphy-api')();    
+const giphy = require('giphy-api')(); 
 const googl = require('goo.gl');  
 const translate = require('google-translate-api');   
 const fs = require("fs"); 
@@ -70,6 +70,8 @@ ${prefix}invites/ يعرض لك  عدد انفايتاتك بالسيرفر
 ${prefix}invinfo <invitelink here> / لمعلومات عن الدعوه
  مثال : invinfo m82n8P
 ${prefix}invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 
+!اذان / اذان على حسب توقيت غرينيتش
+${prefix}horror / قصص رعب
 ${prefix}cal/اله حاسبة
 ${prefix}trans <language> <any thing>/يترجم لك الي تبيه من اي لغة
 ${prefix}short/يختصر لك رابط كبير الى رابط صغير
@@ -94,7 +96,13 @@ ${prefix}contact/ارسال اقتراح او لمراسلة صاحب البوت
 **
   `
 ,`
-        ***__Administrative Orders__***
+        ***__Create Server__***
+** 
+${prefix}aroles  / لانشاء الرتب
+${prefix}achannels / لانشاء الرومات
+  `
+,`
+       ***__Administrative Orders__***
 **
 ${prefix}move @user /  لسحب الشخص الى روومك
 ${prefix}bc / رسالة جماعية الى كل اعضاء السيرفر
@@ -295,7 +303,7 @@ client.on('message', function(msg) {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO 	RedBot Support ©`` ')
+            .setTitle('``INFO 	MoroccoBot Support ©`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -305,7 +313,7 @@ client.on('message', function(msg) {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ ! ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | N1Cho,Venom')
+			      .setFooter('By | N1CHO,Venom')
     })
 }
 });
@@ -392,7 +400,7 @@ client.on('message', message => {
             message.channel.send({embed: {
                 color: 3447003,
                 author: {
-                  name: 'RedBot Support\'s translator',
+                  name: 'MoroccoBot Support\'s translator',
                   icon_url: client.user.avatarURL
                 },
                 fields: [{
@@ -403,7 +411,7 @@ client.on('message', message => {
                 timestamp: new Date(),
                 footer: {
                   icon_url: client.user.avatarURL,
-                  text: "RedBot Support"
+                  text: "MoroccoBot Support"
                 }
             }}
             )
@@ -730,7 +738,7 @@ if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
 
 
-client.users.get("462028844543508490").send(
+client.users.get("433388051222233098").send(
     "\n" + "**" + "? السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ? المرسل : " + "**" +
@@ -742,7 +750,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("By : N1Cho,Venom")
+     .setFooter("By : N1CHO,Venom")
                                                 
 
 message.channel.send(embed);
@@ -787,7 +795,7 @@ if(message.content.startsWith('!bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-let copy = "RedBot Support";
+let copy = "MoroccoBot Support";
 let request = `Requested By ${message.author.username}`;
 if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
 msg.react('✅')
@@ -1895,7 +1903,7 @@ client.on('guildCreate', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/api/oauth2/authorize?client_id=542098346702274560&permissions=8&scope=bot')
   .setDescription(`**
-  New Server RedBot Support ?
+  New Server MoroccoBot Support ?
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
 client.channels.get("543856073560424448").sendEmbed(embed)
@@ -1906,7 +1914,7 @@ client.on('guildDelete', guild => {
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/api/oauth2/authorize?client_id=542098346702274560&permissions=8&scope=bot')
   .setDescription(`**
-  Server Kicked RedBot Support :cry:
+  Server Kicked MoroccoBot Support :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
 client.channels.get("543856073560424448").sendEmbed(embed)
@@ -2284,7 +2292,7 @@ const cuttweet = [     'كت تويت ‏| تخيّل لو أنك سترسم ش�
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('RedBot Support' ,
+ .addField('MoroccoBot Support' ,
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -2539,7 +2547,7 @@ client.on('message', message => {
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
  .setThumbnail(message.author.avatarURL) 
-.addField('RedBot Support' ,
+.addField('MoroccoBot Support' ,
 `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
 message.channel.sendEmbed(embed);
 console.log('[38ab] Send By: ' + message.author.username)
@@ -2735,7 +2743,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , ??#4777 'CODES SERVER'
-					.setFooter("RedBot Support")
+					.setFooter("MoroccoBot Support")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					// eslint-disable-next-line max-depth
@@ -3539,7 +3547,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
-  .addField("Done" , "[RedBot]  تــــم ارســالك في الخــاص اوامر البوت")
+  .addField("Done" , "[MoroccoBot]  تــــم ارســالك في الخــاص اوامر البوت")
   message.channel.sendEmbed(embed);
     }
 });
@@ -3552,7 +3560,7 @@ message.channel.sendEmbed (embed20) .then (A => {
 A.react ('🇲🇦'). ثم (() => A.react ('🇲🇦'))
 })  
 }   
- });  /// by N1Cho
+ });  /// by N1CHO
 client.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', '⇁『welcome』');
     let memberavatar = member.user.avatarURL
@@ -3595,7 +3603,7 @@ client.on('message', message => {
         let embed = new Discord.RichEmbed()
         .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
         .setTitle(`🔸 Click Here 🔸`)
-        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=542098346702274560&permissions=8&scope=bot`)
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=619857601487831051&permissions=8&scope=bot`)
         .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")        
      message.channel.sendEmbed(embed);
        }
@@ -3621,7 +3629,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("By : N1Cho,Venom")
+     .setFooter("By : N1CHO,Venom")
                                                 
 
 message.channel.send(embed);
