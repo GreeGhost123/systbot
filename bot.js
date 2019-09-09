@@ -68,7 +68,7 @@ ${prefix}bot/يعرض لك كل معلومات البوت
 ${prefix}count/يعرض لك عدد الاشخاص بالسيرفر بدون بوتات
 ${prefix}invites/ يعرض لك  عدد انفايتاتك بالسيرفر 
 ${prefix}invinfo <invitelink here> / لمعلومات عن الدعوه
- مثال : invinfo m82n8P
+ مثال : invinfo m82n8P 
 ${prefix}invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 
 !اذان / اذان على حسب توقيت غرينيتش
 ${prefix}horror / قصص رعب
@@ -728,7 +728,7 @@ message.channel.send(embed)
 }
 
 
-});
+}); 	// N1CHO
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
