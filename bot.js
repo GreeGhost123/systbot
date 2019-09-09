@@ -94,13 +94,13 @@ ${prefix}inv/لدعوة البوت الى سيرفرك
 ${prefix}support/سيرفر الدعم
 ${prefix}contact/ارسال اقتراح او لمراسلة صاحب البوت
 **
-
+`,`
 
         ***__Create Server__***
 ** 
 ${prefix}aroles  / لانشاء الرتب
 ${prefix}achannels / لانشاء الرومات
-
+`,`
 
        ***__Administrative Orders__***
 **
@@ -133,7 +133,7 @@ ${prefix}make <number> / ينشا لك الوان مع كم الوان تبي
 ${prefix}color <number> / لختيار لون
 ${prefix}deletecolors <number> / لحذف الالوان
 **
-   
+   `,`
         ***__Music orders__***
 **
 ${prefix}play / لتشغيل أغنية برآبط أو بأسم
