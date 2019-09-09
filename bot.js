@@ -339,7 +339,7 @@ client.on('message', function(msg) {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ ! ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | N1CHO,Venom')
+			      .setFooter('By | Dark,N1cho')
     })
 }
 });
