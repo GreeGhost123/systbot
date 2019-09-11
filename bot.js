@@ -283,6 +283,35 @@ client.on('message', async message => {
     },86400000);
     }
 });
+const Eris = require("eris");
+var x5bzteam = new Eris("token");
+x5bzteam.on("ready", () => {
+    console.log("Yo! Changer [ON]");
+    onstart();
+});
+x5bz = "621423685567381540";
+nick = "Draw-Bot☥";
+function onstart(){
+    var v1 = nick.split('');
+    var counter;
+    var i=0;
+var x5bz2 = ' ';
+  var x5bz3 =   setInterval(function(){
+     
+     if (i == v1.length){
+     clearInterval(x5bz3);
+     onstart()
+      return;
+     }
+     var v2 = v1[i];
+    x5bz2 += v2;
+    x5bzteam.editNickname(x5bz, x5bz2);
+ 
+        i++;
+   
+     }, 1000);
+}
+x5bzteam.connect();
 
 client.on('message', message => {
      if(!message.channel.guild) return;
@@ -329,7 +358,7 @@ client.on('message', function(msg) {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO 	MoroccoBot Support ©`` ')
+            .setTitle('``INFO 	Draw-Bot ©`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
