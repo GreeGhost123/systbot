@@ -3660,7 +3660,7 @@ if (message.content.startsWith(prefix + 'setgame')) {
 
 
 });
-	client.on('message', message => {
+client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
@@ -3705,6 +3705,7 @@ if (message.content.startsWith(prefix + 'setgame')) {
 
 
 });
+	
 client.on("message", message =>{//N1CHO
 //السطر ال تحت لمنع تكرار انشاء الرتب لو عاوز تغير اسم الرتب غيرها وحط اسمها فى السطر ال تحت كمان علشان ميحصلش سبام
 let roles = message.guild.roles.find(all=> all.name === "» Founders  ❥", "» Server Managers  ❥", "» Developpers  ❥", "» Moderators  ❥", "» VIP  ❥",
