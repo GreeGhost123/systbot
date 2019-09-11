@@ -283,11 +283,6 @@ client.on('message', async message => {
     },86400000);
     }
 });
-const Eris = require("eris");
-var x5bzteam = new Eris("token");
-x5bzteam.on("ready", () => {
-    console.log("Yo! Changer [ON]");
-    onstart();
 });
 x5bz = "621423685567381540";
 nick = "Draw-Bot☥";
