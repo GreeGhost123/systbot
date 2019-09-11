@@ -284,11 +284,7 @@ client.on('message', async message => {
     }
 });
 });
-const Eris = require("eris");
-client.on("ready", () => {
-    console.log("Yo! Changer [ON]");
-    onstart();
-});
+
 client = "621423685567381540";
 nick = "Draw-Bot☥";
 function onstart(){
@@ -311,6 +307,9 @@ var client = ' ';
      }, 1000);
 }
 client.connect();
+}
+
+});
 
 client.on('message', message => {
      if(!message.channel.guild) return;
