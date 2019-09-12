@@ -33,6 +33,7 @@ var ti={}
 ,spee={}
 ,attentions={};
 // N1CHO
+
 client.on('ready', function(){
     var ms = 60000 ;
     var setGame = ['!help','Type !help'];
@@ -57,6 +58,7 @@ client.on('ready', function(){
  console.log(` ???????????????????`);
  console.log(` ???????????????????`);
 });
+
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`**
@@ -258,6 +260,7 @@ client.on('message', async message => {
     },86400000);
     }
 });
+
 client.on('message', async message => {
     let amount = 99952542845;
     if(message.content.startsWith(prefix + "money")) {
@@ -3531,15 +3534,8 @@ client.on('message', message => {
      message.channel.sendEmbed(embed);
        } 
    });  
-client.on('message', message => {
-     if (message.content === (prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#8650a7")
-  .addField("Done" , "[MoroccoBot]  تــــم ارســالك في الخــاص اوامر البوت")
-  message.channel.sendEmbed(embed);
-    }
-});
+
+
 client.on('message', message => {
    if (message.content === "!اذان") {
 var embed20 = new Discord.RichEmbed ()
@@ -3550,6 +3546,18 @@ A.react ('🇲🇦'). ثم (() => A.react ('🇲🇦'))
 })  
 }   
  });  /// by N1CHO
+
+client.on('message', message => {
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , "[DrawBot]  تــــم ارســالك في الخــاص اوامر البوت")
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
 client.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', '⇁『welcome』');
     let memberavatar = member.user.avatarURL
