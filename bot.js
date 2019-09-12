@@ -32,7 +32,7 @@ var table = require('table').table
 var ti={}  
 ,spee={}
 ,attentions={};
-// N1CHO
+// 
 
 client.on('ready', function(){
     var ms = 60000 ;
