@@ -433,9 +433,6 @@ client.users.get("510774676876689408").send(
     "\n" + "" + args + "")
 
 let embed = new Discord.RichEmbed()
-     .setAuthor(message.author.username, message.author.avatarURL)
-     .setThumbnail(message.author.avatarURL)
-     .setFooter("By : N1CHO,Dark")
                                                 
 
 message.channel.send(embed);
