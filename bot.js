@@ -445,33 +445,11 @@ message.channel.send(embed);
     
 });
 
-client.on('message' , message => {
-var prefix = "!"
 
-if (message.author.bot) return;
-if (message.content.startsWith(prefix + "contact")) {
-if (!message.channel.guild) return;
 
-let args = message.content.split(" ").slice(1).join(" ");
 
-client.users.get("510774676876689408").send(
-    "\n" + "" + "● السيرفر :" + "" +
-    "\n" + "" + "» " + message.guild.name + "" +
-    "\n" + "" + " ● المرسل : " + "" +
-    "\n" + "" + "» " + message.author.tag + "" +
-    "\n" + "" + " ● الرسالة : " + "" +
-    "\n" + "" + args + "")
 
-let embed = new Discord.RichEmbed()
-     .setFooter("By : N1CHO,Dark")
-                                                
 
- 
-message.channel.send(embed);
-
-}
-    
-});
 client.on('message' , message => {
 var prefix = "!"
 
@@ -490,15 +468,17 @@ client.users.get("434757108790198272").send(
     "\n" + "" + args + "")
 
 let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username, message.author.avatarURL)
-  
-     .setFooter("By : N1CHO,Dark")
-                                                
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : N1CHO,Dark")                                                                    
 message.channel.send(embed);
 
 }
     
 });
+
+
 client.on('message', message => {
     if (message.content.startsWith("!trans")) {
       
@@ -603,6 +583,34 @@ if (command == "z5rf") {
    message.reply(`\n ${zalgo(args.join(' '))}`);
   }
 
+});
+
+client.on('message' , message => {
+var prefix = "!"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+client.users.get("510774676876689408").send(
+    "\n" + "" + "● السيرفر :" + "" +
+    "\n" + "" + "» " + message.guild.name + "" +
+    "\n" + "" + " ● المرسل : " + "" +
+    "\n" + "" + "» " + message.author.tag + "" +
+    "\n" + "" + " ● الرسالة : " + "" +
+    "\n" + "" + args + "")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : N1CHO,Dark")                                   
+message.channel.send(embed);
+
+}
+    
 });
 
 client.on('message', message => {
@@ -843,13 +851,32 @@ message.channel.send(
     }
 });
 client.on('message' , message => {
+var prefix = "!"
+
 if (message.author.bot) return;
 if (message.content.startsWith(prefix + "contact")) {
 if (!message.channel.guild) return;
 
-
-
 let args = message.content.split(" ").slice(1).join(" ");
+
+client.users.get("510774676876689408").send(
+    "\n" + "" + "● السيرفر :" + "" +
+    "\n" + "" + "» " + message.guild.name + "" +
+    "\n" + "" + " ● المرسل : " + "" +
+    "\n" + "" + "» " + message.author.tag + "" +
+    "\n" + "" + " ● الرسالة : " + "" +
+    "\n" + "" + args + "")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : N1CHO,Dark")                                   
+message.channel.send(embed);
+
+}
+    
+});
 
 
 
