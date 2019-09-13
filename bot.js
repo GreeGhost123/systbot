@@ -463,7 +463,10 @@ client.users.get("510774676876689408").send(
     "\n" + "" + args + "")
 
 let embed = new Discord.RichEmbed()
-  
+     .setFooter("By : N1CHO,Dark")
+                                                
+
+ 
 message.channel.send(embed);
 
 }
@@ -487,7 +490,10 @@ client.users.get("434757108790198272").send(
     "\n" + "" + args + "")
 
 let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username, message.author.avatarURL)
   
+     .setFooter("By : N1CHO,Dark")
+                                                
 message.channel.send(embed);
 
 }
@@ -508,7 +514,7 @@ client.on('message', message => {
             message.channel.send({embed: {
                 color: 3447003,
                 author: {
-                  name: 'MoroccoBot Support\'s translator',
+                  name: 'DrawBot Support\'s translator',
                   icon_url: client.user.avatarURL
                 },
                 fields: [{
@@ -519,7 +525,7 @@ client.on('message', message => {
                 timestamp: new Date(),
                 footer: {
                   icon_url: client.user.avatarURL,
-                  text: "MoroccoBot Support"
+                  text: "DrawBot Support"
                 }
             }}
             )
