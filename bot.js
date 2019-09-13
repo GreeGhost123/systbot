@@ -424,7 +424,7 @@ if (!message.channel.guild) return;
 
 let args = message.content.split(" ").slice(1).join(" ");
 
-client.users.get("510774676876689408").send(
+client.users.get("433388051222233098").send(
     "\n" + "" + "● السيرفر :" + "" +
     "\n" + "" + "» " + message.guild.name + "" +
     "\n" + "" + " ● المرسل : " + "" +
@@ -444,7 +444,27 @@ message.channel.send(embed);
 }
     
 });
-                                                
+
+client.on('message' , message => {
+var prefix = "!"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+client.users.get("510774676876689408").send(
+    "\n" + "" + "● السيرفر :" + "" +
+    "\n" + "" + "» " + message.guild.name + "" +
+    "\n" + "" + " ● المرسل : " + "" +
+    "\n" + "" + "» " + message.author.tag + "" +
+    "\n" + "" + " ● الرسالة : " + "" +
+    "\n" + "" + args + "")
+
+let embed = new Discord.RichEmbed()
+  
+message.channel.send(embed);
 
 }
     
@@ -466,8 +486,9 @@ client.users.get("434757108790198272").send(
     "\n" + "" + " ● الرسالة : " + "" +
     "\n" + "" + args + "")
 
-let embed = new Discord.RichEmbed();   
-
+let embed = new Discord.RichEmbed()
+  
+message.channel.send(embed);
 
 }
     
