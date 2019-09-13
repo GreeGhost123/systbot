@@ -1047,7 +1047,7 @@ client.on('message', message => {
  })
               message.channel.send('Done  ')
  }
-});
+}); //
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
