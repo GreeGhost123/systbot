@@ -433,9 +433,18 @@ client.users.get("510774676876689408").send(
     "\n" + "" + args + "")
 
 let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : N1CHO,Dark")
                                                 
 
 message.channel.send(embed);
+
+}
+    
+});
+                                                
 
 }
     
@@ -457,9 +466,8 @@ client.users.get("434757108790198272").send(
     "\n" + "" + " ● الرسالة : " + "" +
     "\n" + "" + args + "")
 
-let embed = new Discord.RichEmbed()   
+let embed = new Discord.RichEmbed();   
 
-message.channel.send(embed);
 
 }
     
@@ -817,27 +825,7 @@ if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
 
 
-client.users.get("433388051222233098").send(
-    "\n" + "**" + "? السيرفر :" + "**" +
-    "\n" + "**" + "» " + message.guild.name + "**" +
-    "\n" + "**" + " ? المرسل : " + "**" +
-    "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ? الرسالة : " + "**" +
-    "\n" + "**" + args + "**")
 
-let embed = new Discord.RichEmbed()
-     .setAuthor(message.author.username, message.author.avatarURL)
-     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
-     .setThumbnail(message.author.avatarURL)
-     .setFooter("By : N1CHO,Venom")
-                                                
-
-message.channel.send(embed);
-
-
-}
-    
-});
 client.on('message', message => {
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
