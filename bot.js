@@ -343,7 +343,7 @@ client.on('message', function(msg) {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ ! ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | Dark,N1cho')
+			      .setFooter('By | N1CHO, Drak')
     })
 }
 });
@@ -414,6 +414,63 @@ client.on('message', msg => {
 
     }
 };
+});
+client.on('message' , message => {
+var prefix = "!"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+client.users.get("510774676876689408").send(
+    "\n" + "" + "● السيرفر :" + "" +
+    "\n" + "" + "» " + message.guild.name + "" +
+    "\n" + "" + " ● المرسل : " + "" +
+    "\n" + "" + "» " + message.author.tag + "" +
+    "\n" + "" + " ● الرسالة : " + "" +
+    "\n" + "" + args + "")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : N1CHO,Dark")
+                                                
+
+message.channel.send(embed);
+
+}
+    
+});
+client.on('message' , message => {
+var prefix = "!"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+client.users.get("434757108790198272").send(
+    "\n" + "" + "● السيرفر :" + "" +
+    "\n" + "" + "» " + message.guild.name + "" +
+    "\n" + "" + " ● المرسل : " + "" +
+    "\n" + "" + "» " + message.author.tag + "" +
+    "\n" + "" + " ● الرسالة : " + "" +
+    "\n" + "" + args + "")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("By : N1CHO,Dark")
+                                                
+
+message.channel.send(embed);
+
+}
+    
 });
 client.on('message', message => {
     if (message.content.startsWith("!trans")) {
@@ -752,7 +809,7 @@ message.channel.send(
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  https://discord.gg/VMQfUXD")
+  .addField(" ** :gear: Server Support :gear: **" , "  https://discord.gg/duAdvvs")
      
      
   message.channel.sendEmbed(embed);
