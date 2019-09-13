@@ -116,6 +116,7 @@ client.on('message', async message => {
     let amount = 99952542845;
     if(message.content.startsWith(prefix + "money")) {
     if(message.author.bot) return;
+    if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     if(coolDown.has(message.author.id)) return message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes in \`\`1 Day\`\`.**`);
     
     let userData = credits[message.author.id];
