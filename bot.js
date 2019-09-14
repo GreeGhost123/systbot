@@ -3256,7 +3256,15 @@ client.on('message', message => {
      message.channel.sendEmbed(embed);
        } 
    });  
-
+client.on('message', message => {
+     if (message.content === (prefix + "web")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , "[DrawBot] https://greeghost123.github.io/DrawBot/ ")
+  message.channel.sendEmbed(embed);
+    }
+});
 
 client.on('message', message => {
    if (message.content === "!اذان") {
