@@ -59,6 +59,61 @@ client.on('ready', function(){
  console.log(` ???????????????????`);
 });
 
+const { Canvas } = require("canvas-constructor"); // You can't make images without this.
+const { get } = require("snekfetch"); // This is to fetch the user avatar and convert it to a buffer.
+const { resolve, join } = require("path"); // This is to get a font file.
+ 
+Canvas.registerFont(resolve(join(__dirname, "./Discord.ttf")), "Discord");
+ 
+
+ 
+client.once('ready', () => {
+    console.log('Ready!');
+});
+ 
+ 
+async function profile(message) {
+    const imageUrlRegex = /\?size=2048$/g;
+    const { body: avatar } = await get(message.author.displayAvatarURL.replace(imageUrlRegex, "?size=128"));
+// The reason for the displayName length check, is we don't want the name of the user going outside
+// the box we're going to be making later, so we grab all the characters from the 0 index through
+// to the 17th index and cut the rest off, then append `...`.
+const name = message.member.displayName.length > 20 ? message.member.displayName.substring(0, 17) + "..." : message.member.displayName;
+console.log(message.member.displayName)
+    return new Canvas(400, 180)
+    .setColor("#7289DA")
+    .addRect(84, 0, 316, 180)
+    .setColor("#2C2F33")
+  .addRect(0, 0, 84, 180)
+  .addRect(169, 26, 231, 46)
+  .addRect(224, 108, 176, 46)
+  .setShadowColor("rgba(22, 22, 22, 1)") // This is a nice colour for a shadow.
+  .setShadowOffsetY(5) // Drop the shadow by 5 pixels.
+  .setShadowBlur(10) // Blur the shadow by 10.
+  .save() // We should save the instance again.
+  .addCircle(84, 90, 62)
+  .restore()
+  .addRoundImage(avatar, 20, 26, 128, 128, 64)
+  .createBeveledClip(20, 138, 128, 32, 5)
+  .setColor("#23272A")
+  .addRect(20, 138, 128, 32)
+  .restore()
+  .setTextAlign("center")
+  .setTextFont("10pt Discord")
+  .setColor("#FFFFFF")
+  .addText(message.member.displayName, 285, 54)
+  .addText(`Level: 1`, 84, 159)
+  .setTextAlign("left")
+  .addText(`Score: 10`, 241, 136)
+.toBuffer();
+  }
+ 
+client.on('message', async message => {
+    if(message.content === "profile"){
+      await message.channel.send(new Discord.Attachment(await profile(message), `profile-${message.author.id}.jpg`));
+    }
+});
+
 
 
 
