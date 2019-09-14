@@ -68,7 +68,7 @@ if(message.author.bot || message.channel.type === 'dm') return;
 let args = message.content.split(' ');
 let author = message.author.id;
 if(!credits[author]) credits[author] = {
-credits:3000
+credits: 0
 }
 fs.writeFileSync("./credits.json", JSON.stringify(credits, null, 4));
 if(args[0].toLowerCase() == `${prefix}credits`) {
@@ -136,37 +136,28 @@ time[message.author.id] = Date.now();
 message.channel.send(`**:atm:  | ${message.author.username}, you received your :yen: ${ammount} daily credits!**`);
 fs.writeFile("./credits.json", JSON.stringify(credits), function(e) {
 if(e)throw e;
+if(args[0].toLowerCase() === `${prefix}givecredits`) {
+let cooldown = 8.64e+7
+let Daily = time[message.author.id]
+if (Daily !== null && cooldown - (Date.now() - Daily) > 0) {
+let times = (cooldown - (Date.now() - Daily));
+message.channel.send(`**:stopwatch: |  ${message.author.username}, your daily :dollar: credits refreshes in ${pretty(times, {verbose:true})}.**`);
+fs.writeFile("./time.json", JSON.stringify(time), function(e) {
+if(e)throw e;
+})
+}else{
+let ammount = (5935682665, 5945482665, 5945682765, 5945682667);
+if (message.author.id !== "555377330160140288", "433388051222233098", "434757108790198272") return;
+credits[author].credits += ammount;
+time[message.author.id] = Date.now();
+message.channel.send(`**:atm:  | ${message.author.username}, you received your :yen: ${ammount} daily credits!**`);
+fs.writeFile("./credits.json", JSON.stringify(credits), function(e) {
+if(e)throw e;
 })
 }
 }
 }); 
 
-client.on('message', async message => {
-    let amount = 99952542845;
-    if(message.content.startsWith(prefix + "money")) {
-    if(message.author.bot) return;
-    if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-    if(coolDown.has(message.author.id)) return message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes in \`\`1 Day\`\`.**`);
-    
-    let userData = credits[message.author.id];
-    let m = userData.credits + amount;
-    credits[message.author.id] = {
-    credits: m
-    };
-
-    fs.writeFile("./creditsCode.json", JSON.stringify(userData.credits + amount), (err) => {
-    if (err) console.error(err);
-    });
-    
-    message.channel.send(`**:atm: | ${message.author.username}, you received your :yen: ${amount} credits!**`).then(() => {
-        coolDown.add(message.author.id);
-    });
-    
-    setTimeout(() => {
-       coolDown.remove(message.author.id);
-    },86400000);
-    }
-});
 
 
 client.on('message', message => {
@@ -609,7 +600,7 @@ if (!message.channel.guild) return;
 
 let args = message.content.split(" ").slice(1).join(" ");
 
-client.users.get("433388051222233098", "434757108790198272", "510774676876689408").send(
+client.users.get("433388051222233098", "434757108790198272", "510774676876689408", "555377330160140288", "479668224649199617").send(
     "\n" + "" + "● السيرفر :" + "" +
     "\n" + "" + "» " + message.guild.name + "" +
     "\n" + "" + " ● المرسل : " + "" +
